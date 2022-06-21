@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilos.css">
+    <title>Principal</title>
+</head>
+<body>
+    <div>
+        <form action="confirmacionPOST.asp" method="post" id="formulario">
+        <table>
+        <th colspan="4"><span class="titulo">ENTRADAS-TEK</span><br><hr></th>
+        <tr>
+            <td><span>Seleccione equipo:</span></td>
+            <td><select name="equipo" id="equipo" onchange="cambioprecio(this.value)" >
+                <option value="Barcelona - Ath. Bilbao"><span>Barcelona - Ath. Bilbao</span></option>
+                <option value="Real Madrid - Sp. Gijón"><span>Real Madrid - Sp. Gijón</span></option>
+                <option value="Dep. La Coruña – Sevilla"><span>Dep. La Coruña – Sevilla</span></option>
+            </select></td>
+            <td><span>Seleccione ubicacion:</span></td>
+            <td><select name="ubicacion" id="ubicacion" onchange="cambioprecio(this.value)">
+                <option value="Popular Local"><span>Popular Local</span></option>
+                <option value="Popular Visitante"><span>Popular Visitante</span></option>
+                <option value="Platea Local"><span>Platea Local</span></option>
+                <option value="Platea Visitante"><span>Platea Visitante</span></option>
+            </select></td>
+        </tr>
+        <tr>
+            <td><span>Cantidad de entradas:</span></td>
+            <td><input name="entradas" id="entradas" type="number"  value="1" onchange="cambioprecio(this.value)"></td>
+            <td><span>Precio:</span></td>
+            <td><input name="precio" id="precio" type="number" value="200" readonly ></td>
+        </tr>
+        <tr >
+            <td  colspan="3"><span class="mensaje" id="maxentradas"></span></td>
+        </tr> 
+        <th colspan="4"><hr><span class="titulo">INFORMACION DE PAGO</span> <br> <hr> </th>
+        <tr>
+            <td><span>Apellido:</span></td>
+            <td><input type="text" name="apellido" id="apellido" ></td> 
+            
+            <td><span>Nombre:</span></td>
+            <td><input type="text" name="nombre" id="nombre" ></td>
+        </tr>
+        <tr >
+            <td  colspan="3"><span class="mensaje" id="faltaapellido"></span></td>
+            <td  colspan="3"><span class="mensaje" id="faltanombre"></span></td>
+        </tr>   
+        <tr>
+            <td><span>E-Mail:</span></td>
+            <td><input name="email" type="text" id="email"></td>
+            <td><span>Confirme el E-Mail:</span></td>
+            <td><input name="confirmeemail" id="confirmeemail" type="text"></td>
+        </tr>
+        <tr >
+            <td  colspan="3"><span class="mensaje" id="faltaemail"></span></td>
+            <td  colspan="3"><span class="mensaje" id="faltaconfirmeemail"></span></td>
+        </tr>
+        <th colspan="4"><span class="mensaje" id="apellidovacio"></span><hr><span class="titulo">SELECCIONE TARJETA DE CREDITO</span><br> <hr> </th>
+        <tr>
+            <td colspan="4"><a href=""><img src="imagenes/Visa-Logo.jpg" alt="" id="visa" onclick="return visacuotas()"></a> <a href=""><img src="imagenes/master-card-logo.png" alt="" id="master" onclick="return mastercuotas()"></a><a href=""><img src="imagenes/american-express-logo.jpg" alt="" id="american" onclick="return americancuotas()"></a></td>
+        </tr>     <a href="">
+        <tr>
+            <td colspan="4"><input type="radio" name="tipotarjeta" id="tipotarjeta" value="visa"><input type="radio" name="tipotarjeta" id="tipotarjeta" value="master"><input type="radio" name="tipotarjeta" id="tipotarjeta" value="american"></td>
+        </tr>
+        <th colspan="4"><hr></th>
+        <tr>
+            <td colspan="4"><input class="boton" type="submit" value="Aceptar"> <input class="boton" type="reset" value="Limpiar"></td>
+        </tr>
+    </form>
+    </div>
+    <script src="validacion.js"></script>
+</body>
+</html> 
